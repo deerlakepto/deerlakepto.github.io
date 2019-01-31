@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" style="overflow-y: auto;">
+	<head>
+		
+		<!-- Page Meta -->
+	    <meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<meta content="Welcome official website of the Deerlake PTO. We are a Parent-Teacher Organization that supports the school with events through fundraising!" name="description">
+    	<meta content="Welcome official website of the Deerlake PTO. We are a Parent-Teacher Organization that supports the school with events through fundraising!" name="og:description">
+    	<meta content="Welcome official website of the Deerlake PTO. We are a Parent-Teacher Organization that supports the school with events through fundraising!" name="twitter:description">
+	    <meta name="google-signin-client_id" content="615704098724-b9fgilmccp2bg4fduc1sq7qn098ke64r.apps.googleusercontent.com">
+	    <title>New Post &middot; Deerlake PTO</title>
+	    
+	    <!-- CDN Ref -->
+	    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" />
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titan+One" />
+	    
+	    <!-- Styles -->
+	    <link rel="stylesheet" href="https://deerlakepto.com/assets/css/addons.css">
+	    <link rel="stylesheet" href="https://deerlakepto.com/assets/css/main.css">
+	    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+    </head>
+    <body>
+        
+        <!-- Google Sign-in -->
+        <div id="g-signin2" class="g-signin2" data-onsuccess="onSignIn" style="display: none"></div>
+        
+        <!-- Navbar -->
+		<nav class="navbar">
+			<div class="container">
+				<div class="navbar-brand">
+					<a id="logo" class="navbar-item" href="./">Deerlake PTO</a>
+					<span class="navbar-burger burger" data-target="navbarMenu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+				</div>
+				<div id="navbarMenu" class="navbar-menu">
+					<div class="navbar-end">
+						<a class="navbar-item" href="../../">Home</a>
+						<a class="navbar-item" href="http://boosters.deerlakepto.com">Boosters</a>
+						<a class="navbar-item" href="http://events.deerlakepto.com">Events</a>
+						<a class="navbar-item" href="../">Blog</a>
+						<div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">Contact</a>
+                            <div class="navbar-dropdown">
+                                <a class="navbar-item" href="mailto:questions@deerlakepto.com">Email Us</a>
+                                <a class="navbar-item" href="../../suggestions/">Suggest Something</a>
+                                <a class="navbar-item" href="../../sponsor/">Sponsor an Event</a>
+                                <hr class="navbar-divider">
+                                <a class="navbar-item is-active">Post a Story</a>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<!-- Content -->
+		<div class="container">
+			
+			<!-- Flow Animation -->
+			<div id="flow">
+				<span class="flow-1"></span>
+				<span class="flow-2"></span>
+				<span class="flow-3"></span>
+			</div>
+			
+			<!-- Form -->
+    		<div class="notification is-light" style="margin-top: 3.5em; margin-bottom: 3.5em; opacity: 0.925">
+    			<div class="content has-text-centered">
+    			    
+    			    <!-- Sign In -->
+    			    <br /><button class="button is-link is-large is-outlined" id="signin"><i class="fab fa-google"></i>&nbsp;&nbsp;&nbsp;<b>Sign In</b></button><br />
+    			    
+    			    <!-- Divider -->
+    			    <br /><hr style="background-color: #363636;"/><br />
+    			    
+    			    <!-- Form Content -->
+    			    <div id="formcontent" class="has-text-centered" style="opacity: 0.5; cursor: not-allowed;">
+    			        <div class="field">
+                            <div class="control">
+                                <h3>Headline:</h3>
+                                <input id="headline" class="input is-info is-medium" type="text" placeholder="The Latest Amazing Thing by PTO!" maxlength="40" disabled/>
+                            </div>
+                        </div>
+                        <br /><br />
+                        <div class="field">
+                            <div class="control">
+                                <h3>Banner Image:</h3>
+                                <input id="banner" class="input is-info is-medium" type="text" placeholder="https://imgur.com/your-amazing-banner" disabled/>
+                            </div>
+                        </div>
+                        <br /><br />
+                        <div class="field">
+                            <div class="control">
+                                <h3>Your Story:</h3>
+                                <textarea id="textarea" class="textarea is-info is-medium" type="text" placeholder="Peter piper picked a peck of pickle peppers..." rows="8" disabled></textarea>
+                            </div>
+                        </div>
+                        <br /><br />
+                        <div class="field">
+                            <div class="control">
+                                <h3>Category:</h3>
+                                <div class="select is-link is-medium" style="width: 35%">
+	                                <select id="category" style="width: 100%" disabled>
+	                                	<option selected>#deerlake</option>
+	                                	<option>#boosters</option>
+	                                	<option>#events</option>
+	                                	<option>#bucklife</option>
+	                                	<option>#aroundthedeer</option>
+	                                	<option>#pto</option>
+	                                </select>
+	                            </div>
+                            </div>
+                        </div>
+                        <br /><br />
+                        <div class="field">
+                            <div class="control">
+                                <h3>Audience:</h3>
+                                <div class="select is-link is-medium" style="width: 35%">
+	                                <select id="category" style="width: 100%" disabled>
+	                                	<option selected>#everyone</option>
+	                                	<option>#students</option>
+	                                	<option>#teachers</option>
+	                                	<option>#staff</option>
+	                                	<option>#parents</option>
+	                                </select>
+	                            </div>
+                            </div>
+                        </div>
+                        <br /><br /><br />
+                        <div class="field">
+                            <div class="control has-text-centered">
+                            	<button id="submitform" class="button is-outlined is-link is-large" disabled><i class="fas fa-arrow-right"></i>&nbsp;&nbsp;&nbsp;<b>Post my Story!</b></button>
+                            </div>
+                        </div>
+                        <br />
+    			    </div>
+    			    
+    			</div>
+    		</div>
+			
+		</div>
+		
+		
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="container">
+				<div class="content has-text-centered">
+					<div class="soc">
+						<a href="https://facebook.com/deerlakepto">&nbsp;&nbsp;<i class="fab fa-facebook fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+						<a href="https://twitter.com/deerlakepto">&nbsp;&nbsp;<i class="fab fa-twitter fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+						<a href="https://instagram.com/deerlakepto">&nbsp;<i class="fab fa-instagram fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+					</div>
+					<br />
+					<p>
+						&copy; Deerlake PTO. Made with 💙 by <a id="sloanfinger" href="https://sloanfinger.io/" target="_blank">Sloan Finger</a>.<br />
+					</p>
+				</div>
+			</div>
+		</footer>
+        
+        <!-- Scripts -->
+        <script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/auth.js"></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+    </body>
