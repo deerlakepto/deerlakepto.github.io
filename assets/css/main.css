@@ -1,0 +1,87 @@
+
+    html {
+        overflow-y: auto;
+        scroll-behavior: smooth;
+    }
+    
+    .underlink {
+        text-decoration: underline;
+        transition: .3s;
+        cursor: pointer;
+    }
+    
+    .underlink:hover {
+        text-decoration: none;
+    }
+    
+    #logo {
+        display: inline-block;
+        cursor: pointer;
+        padding: 15px 10px;
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+        margin: 0;
+    }
+    
+    #logo > img {
+        width: 50px;
+        transition: .2s;
+    }
+    
+    #logo > p {
+        font-size: 32.5px;
+        font-family: 'Aleo', serif;
+        transition: .2s;
+        position: fixed;
+        margin: 7.5px 0px;
+        display: inline-block;
+        color: black;
+        font-weight: 700;
+    }
+    
+    .is-serif {
+        font-family: 'Aleo', serif;
+    }
+    
+    .is-calendar-icon {
+        border: 2px solid #363636;
+        border-radius: 4px;
+        padding: 2px;
+        margin-bottom: 1.25rem;
+    }
+    
+    .pagination-link.is-current {
+        background-color: #363636;
+        border: none;
+        color: whitesmoke !important;
+    }
+    
+    .footer {
+        background-color: #363636;
+    }
+    
+    .footer p {
+        color: whitesmoke;
+    }
+    
+    .footer a {
+        color: whitesmoke !important;
+    }
+    
+    .soc > a {
+        color: whitesmoke;
+        transition: .3s;
+    }
+    
+    .soc > a > .fa-facebook:hover {
+        color: #3373dc;
+    }
+    
+    .soc > a > .fa-twitter:hover {
+        color: #219cee;
+    }
+    
+    .soc > a > .fa-instagram:hover {
+        color: #ff3860;
+    }
