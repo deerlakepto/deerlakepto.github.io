@@ -5,7 +5,8 @@
 		<!-- Page Meta -->
 	    <meta charset="UTF-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    	<meta name="description" content="Welcome official website of the Deerlake PTO. We are a Parent-Teacher Organization that supports the school with events through fundraising!">
+    	<meta name="description" content="Welcome official website of the Deerlake PTO! We are a Parent-Teacher Organization that supports the school with events through fundraising.">
+	    <meta name="google-signin-client_id" content="615704098724-b9fgilmccp2bg4fduc1sq7qn098ke64r.apps.googleusercontent.com">
 	    <title>Home &middot; Deerlake PTO</title>
 	    
 	    <!-- CDN Ref -->
@@ -14,453 +15,366 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
 	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" />
 	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aleo:400,700" />
+	    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
 	    
 	    <!-- Styles -->
 	    <link rel="stylesheet" href="./assets/css/main.css">
 	    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 	</head>
-	<body>
-		
-		<!-- Logo -->
-		<div id="logo"><img src="favicon.ico">&nbsp;&nbsp;&nbsp;<p>Deerlake PTO</p></div>
-		
-		<!-- Hero -->
-		<section class="hero is-light is-bold">
-            <div class="hero-body">
-            	<br /><br />
-                <div class="columns is-multiline">
-                	
-                	<div class="column is-full is-hidden-mobile">
-                		<br />
-                		<p class="is-serif" style="font-size: 2.25em">Welcome to the official website for the Deerlake PTO! We are a Parent-Teacher Organization that supports the school with events through fundraising.</p>
-                		<br />
-                		<hr style="background-color: #363636; width: 100%" />
-                		<br />
-                	</div>
-                	
-                	<!-- Main Content (Left) -->
-                	<div class="column is-7">
-                		
-                		<!-- Photo Carousel -->
-                		<div class="carousel carousel-animated carousel-animate-slide" data-autoplay="true" data-delay="6000">
-							<div class="carousel-container">
-								<div class="carousel-item has-background is-active">
-									<img class="is-background" src="https://wikiki.github.io/images/merry-christmas.jpg" alt="" width="640" height="310" />
-									<div class="title">Merry Christmas</div>
-								</div>
-								<div class="carousel-item has-background">
-									<img class="is-background" src="https://wikiki.github.io/images/singer.jpg" alt="" width="640" height="310" />
-									<div class="title">Original Gift: Offer a song with <a href="https://lasongbox.com" target="_blank">La Song Box</a></div>
-								</div>
-								<div class="carousel-item has-background">
-									<img class="is-background" src="https://wikiki.github.io/images/sushi.jpg" alt="" width="640" height="310" />
-									<div class="title">Sushi time</div>
-								</div>
-								<div class="carousel-item has-background">
-									<img class="is-background" src="https://wikiki.github.io/images/life.jpg" alt="" width="640" height="310" />
-									<div class="title">Life</div>
-								</div>
-							</div>
-							<div class="carousel-navigation">
-								<div class="carousel-nav-left">
-									<i class="fa fa-chevron-left" aria-hidden="true" style="color: #363636; cursor: pointer"></i>
-								</div>
-								<div class="carousel-nav-right">
-									<i class="fa fa-chevron-right" aria-hidden="true" style="color: #363636; cursor: pointer"></i>
-								</div>
-							</div>
+	<body class="animated fadeIn">
+        
+        <!-- Content -->
+        <div id="content" class="animated" style="display: none">
+	        	
+	        <!-- Google Sign-in -->
+	        <div id="g-signin2" class="g-signin2" data-onsuccess="onSignIn" style="display: none"></div>
+			
+			<!-- Logo -->
+			<div id="logo"><img src="favicon.ico">&nbsp;&nbsp;&nbsp;<p>Deerlake PTO<span id="signin" class="is-hidden-mobile"><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;<b>Sign In</b></span></p></div>
+			
+			<!-- Hero -->
+			<section class="hero is-light is-bold">
+	            <div class="hero-body">
+					<br /><br />
+					<div class="columns is-multiline">
+						
+						<div class="column is-full is-hidden-mobile">
+							<br />
+							<p class="is-serif" style="font-size: 2.25em">Welcome to the official website for the Deerlake PTO! We are a Parent-Teacher Organization that supports the school with <a href="http://events.deerlakepto.com/" target="_blank" class="underlink">events</a> through <a href="http://boosters.deerlakepto.com/" target="_blank" class="underlink">fundraising</a>.</p>
+							<br />
+							<hr style="background-color: #363636; width: 100%" />
+							<br />
 						</div>
 						
-						<!-- Blog (Desktop) -->
-						<div class="is-hidden-mobile">
-							<br /><hr style="background-color: #363636; width: 100%" /><br />
-							<div id="blog-app-desktop">
-								
-								<!-- Search Bar -->
-								<div class="field has-addons">
-									<div class="control is-expanded">
-										<input class="input is-large is-dark" placeholder="Search Blog Posts" />
+						<!-- Main Content (Left) -->
+						<div class="column is-7">
+							
+							<!-- Photo Carousel -->
+							<div class="carousel carousel-animated carousel-animate-slide" data-autoplay="true" data-delay="6000">
+								<div id="carousel-container" class="carousel-container"></div>
+								<div class="carousel-navigation">
+									<div class="carousel-nav-left">
+										<i class="fa fa-chevron-left" aria-hidden="true" style="color: #363636; cursor: pointer"></i>
 									</div>
-									<div class="control">
-										<button class="button is-large is-dark">&nbsp;<i class="fas fa-search"></i>&nbsp;</button>
+									<div class="carousel-nav-right">
+										<i class="fa fa-chevron-right" aria-hidden="true" style="color: #363636; cursor: pointer"></i>
 									</div>
 								</div>
-								<br />
+							</div>
+							
+							<!-- Blog (Desktop) -->
+							<div class="is-hidden-mobile">
+								<br /><hr style="background-color: #363636; width: 100%" /><br />
+								<div id="blog-app-desktop">
 									
-								<!-- Blog Posts -->
-								<div class="columns is-multiline">
-									<div class="column is-half">
-										<div class="card">
-											<div class="card-image">
-												<figure class="image is-4by3">
-													<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-												</figure>
-											</div>
-											<div class="card-content">
-												<div class="media">
-													<div class="media-left">
-														<figure class="image is-48x48">
-															<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-														</figure>
-													</div>
-													<div class="media-content">
-														<p class="title is-4">John Smith</p>
-														<p class="subtitle is-6">@johnsmith</p>
-													</div>
-												</div>
-											
-												<div class="content">
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-													Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-													<a href="#">#css</a> <a href="#">#responsive</a>
-													<br>
-													<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="column is-half">
-										<div class="card">
-											<div class="card-image">
-												<figure class="image is-4by3">
-													<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-												</figure>
-											</div>
-											<div class="card-content">
-												<div class="media">
-													<div class="media-left">
-														<figure class="image is-48x48">
-															<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-														</figure>
-													</div>
-													<div class="media-content">
-														<p class="title is-4">John Smith</p>
-														<p class="subtitle is-6">@johnsmith</p>
-													</div>
-												</div>
-											
-												<div class="content">
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-													Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-													<a href="#">#css</a> <a href="#">#responsive</a>
-													<br>
-													<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="column is-half">
-										<div class="card">
-											<div class="card-image">
-												<figure class="image is-4by3">
-													<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-												</figure>
-											</div>
-											<div class="card-content">
-												<div class="media">
-													<div class="media-left">
-														<figure class="image is-48x48">
-															<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-														</figure>
-													</div>
-													<div class="media-content">
-														<p class="title is-4">John Smith</p>
-														<p class="subtitle is-6">@johnsmith</p>
-													</div>
-												</div>
-											
-												<div class="content">
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-													Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-													<a href="#">#css</a> <a href="#">#responsive</a>
-													<br>
-													<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="column is-half">
-										<div class="card">
-											<div class="card-image">
-												<figure class="image is-4by3">
-													<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-												</figure>
-											</div>
-											<div class="card-content">
-												<div class="media">
-													<div class="media-left">
-														<figure class="image is-48x48">
-															<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-														</figure>
-													</div>
-													<div class="media-content">
-														<p class="title is-4">John Smith</p>
-														<p class="subtitle is-6">@johnsmith</p>
-													</div>
-												</div>
-											
-												<div class="content">
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-													Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-													<a href="#">#css</a> <a href="#">#responsive</a>
-													<br>
-													<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-								<!-- Pagination -->
-								<nav class="pagination is-medium" role="navigation" aria-label="pagination">
-									<a class="pagination-previous" title="This is the first page" disabled>Previous</a>
-									<a class="pagination-next">Next page</a>
-									<ul class="pagination-list">
-										<li>
-											<a class="pagination-link is-current" aria-label="Page 1" aria-current="page">1</a>
-										</li>
-										<li>
-											<a class="pagination-link" aria-label="Goto page 2">2</a>
-										</li>
-										<li>
-											<a class="pagination-link" aria-label="Goto page 3">3</a>
-										</li>
-									</ul>
-								</nav>
+									<h2 class="title is-3"><strong>Blog & Gallery:</strong></h2>
 										
+									<!-- Blog Posts -->
+									<div class="columns is-multiline">
+										<div class="column is-half">
+											<div id="blog1-preview" class="blog-preview" data-launch-modal="blog1"></div>
+										</div>
+										<div class="column is-half">
+											<div id="blog2-preview" class="blog-preview" data-launch-modal="blog2"></div>
+										</div>
+										<div class="column is-half">
+											<div id="blog3-preview" class="blog-preview" data-launch-modal="blog3"></div>
+										</div>
+										<div class="column is-half">
+											<div id="blog4-preview" class="blog-preview" data-launch-modal="blog4"></div>
+										</div>
+									</div>
+									
+									<!-- Pagination -->
+									<nav class="pagination is-medium" role="navigation" aria-label="pagination" data-page="1">
+										<a id="blog-prev" class="pagination-previous" disabled><i class="fas fa-arrow-left"></i></a>
+										<a id="blog-next" class="pagination-next"><i class="fas fa-arrow-right"></i></a>
+										<ul class="pagination-list">
+											<li><a class="pagination-link is-current" aria-label="Page 1">&nbsp;&nbsp;Page&nbsp;<span id="blog-current-page">1</span>&nbsp;of&nbsp;<span id="blog-total-pages">1</span>&nbsp;&nbsp;</a></li>
+										</ul>
+									</nav>
+											
+								</div>
 							</div>
 						</div>
-	                </div>
-	                
-	                <!-- Secondary Content (Right) -->
-	                <div class="column is-5">
-	                	
-	                	<!-- Upcoming Events Calander -->
-	                	<h2 class="title is-2">Upcoming Events:</h2>
-	                	<div class="box">
-							<article class="media">
-								<div class="media-left" style="height: 80px;">
-									<figure class="image" style="width: 64px">
-										<h2 class="title is-calendar-icon is-4 has-text-centered">Dec. <strong class="title is-2">24</strong></h2>
-									</figure>
-								</div>
-								<div class="media-content">
-									<div class="content">
-										<p>
-											<strong>Winter Break</strong>
-											<br>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-										</p>
-									</div>
-								</div>
-							</article>
-						</div>
-	                	<div class="box">
-							<article class="media">
-								<div class="media-left" style="height: 80px;">
-									<figure class="image" style="width: 64px">
-										<h2 class="title is-calendar-icon is-4 has-text-centered">Jan. <strong class="title is-2">8</strong></h2>
-									</figure>
-								</div>
-								<div class="media-content">
-									<div class="content">
-										<p>
-											<strong>Students Return</strong>
-											<br>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-										</p>
-									</div>
-								</div>
-							</article>
-						</div>
-	                	<div class="box">
-							<article class="media">
-								<div class="media-left" style="height: 80px;">
-									<figure class="image" style="width: 64px">
-										<h2 class="title is-calendar-icon is-4 has-text-centered">Feb. <strong class="title is-2">9</strong></h2>
-									</figure>
-								</div>
-								<div class="media-content">
-									<div class="content">
-										<p>
-											<strong>Color Run</strong>
-											<br>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-										</p>
-									</div>
-								</div>
-							</article>
-						</div>
-	                	<div class="box">
-							<article class="media">
-								<div class="media-left" style="height: 80px;">
-									<figure class="image" style="width: 64px">
-										<h2 class="title is-calendar-icon is-4 has-text-centered">Apr. <strong class="title is-2">1</strong></h2>
-									</figure>
-								</div>
-								<div class="media-content">
-									<div class="content">
-										<p>
-											<strong>April Fool's Day</strong>
-											<br>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-										</p>
-									</div>
-								</div>
-							</article>
-						</div>
-	                	<div class="box">
-							<article class="media">
-								<div class="media-left" style="height: 80px;">
-									<figure class="image" style="width: 64px">
-										<h2 class="title is-calendar-icon is-4 has-text-centered">Apr. <strong class="title is-2">13</strong></h2>
-									</figure>
-								</div>
-								<div class="media-content">
-									<div class="content">
-										<p>
-											<strong>A Taste of the Lakes at Buck Market</strong>
-											<br>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-										</p>
-									</div>
-								</div>
-							</article>
-						</div>
-	                	<div class="box">
-							<article class="media">
-								<div class="media-left" style="height: 80px;">
-									<figure class="image" style="width: 64px">
-										<h2 class="title is-calendar-icon is-4 has-text-centered">May <strong class="title is-2">23</strong></h2>
-									</figure>
-								</div>
-								<div class="media-content">
-									<div class="content">
-										<p>
-											<strong>Sloan's Birthday</strong>
-											<br>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-										</p>
-									</div>
-								</div>
-							</article>
-						</div>
-	                	<div class="box">
-							<article class="media">
-								<div class="media-left" style="height: 80px;">
-									<figure class="image" style="width: 64px">
-										<h2 class="title is-calendar-icon is-4 has-text-centered">Jun. <strong class="title is-2">31</strong></h2>
-									</figure>
-								</div>
-								<div class="media-content">
-									<div class="content">
-										<p>
-											<strong>My First Date</strong>
-											<br>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-										</p>
-									</div>
-								</div>
-							</article>
-						</div>
-	                	<div class="box">
-							<article class="media">
-								<div class="media-left" style="height: 80px;">
-									<figure class="image" style="width: 64px">
-										<h2 class="title is-calendar-icon is-4 has-text-centered">Jul. <strong class="title is-2">4</strong></h2>
-									</figure>
-								</div>
-								<div class="media-content">
-									<div class="content">
-										<p>
-											<strong>Tecnically Independence Day</strong>
-											<br>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-										</p>
-									</div>
-								</div>
-							</article>
+						
+						<!-- Secondary Content (Right) -->
+						<div id="calendar-container" class="column is-5">
+							
+							<!-- Blog (Mobile) -->
+							<div class="is-hidden-tablet">
+								<hr style="background-color: #363636; width: 100%" /><br />
+								<div id="blog-app-mobile"></div>
+								<br /><hr style="background-color: #363636; width: 100%" /><br />
+							</div>
+							
+							<!-- Upcoming Events Calander -->
+							<h2 class="title is-3"><strong>Upcoming Events:</strong></h2>
+							
 						</div>
 						
-						<!-- Blog (Mobile) -->
-						<div class="is-hidden-tablet">
-							<br /><hr style="background-color: #363636; width: 100%" /><br />
-							<div id="blog-app-mobile"></div>
+						<div class="column is-full">
+							
+							
+							<!-- Newsletter Sign-up -->
+							<div id="newsletter-form" class="has-text-centered">
+								<br /><hr style="background-color: #363636; width: 100%" /><br />
+								<h4 class="title is-4 has-text-centered">
+									Never miss an event by subscribing to our newsletter:<br /><br />
+									<form action="#" method="post">
+										<div class="field has-addons is-hidden-mobile" style="width: 55%; margin-left: 22.5%">
+											<div class="control is-expanded">
+												<input id="newsletterEmail" class="input is-dark is-large" type="email" placeholder="you@email.com" />
+											</div>
+											<div class="control">
+												<input id="newsletterSub" class="button is-dark is-large" type="submit" value="Subscribe!" />
+											</div>
+										</div>
+									</form>
+									<form action="#" method="post">
+										<div class="field has-addons is-hidden-tablet" style="width: 100%;">
+											<div class="control is-expanded">
+												<input id="newsletterEmail2" class="input is-dark is-large" type="email" placeholder="you@email.com" />
+											</div>
+											<div class="control">
+												<button id="newsletterSub2" type="submit" class="button is-dark is-large"><i class="fas fa-arrow-right"></i></button>
+											</div>
+										</div>
+									</form>
+								</h4>
+							</div>
+							
+							<!-- Site Editor -->
+							<div id="site-editor" class="has-text-centered is-hidden-mobile" style="display: none">
+								<br /><hr style="background-color: #363636; width: 100%" /><br />
+								<h4 class="title is-4 has-text-centered">
+									Select an item to edit:<br /><br />
+									<div class="columns has-text-centered is-multiline">
+										<div class="column is-offset-3 is-2">
+											<div class="button is-container is-danger has-text-centered" data-launch-modal="newNewsletter">
+												<h3 class="title is-4" style="color: white">Newsletter<br /><br /><i class="far fa-newspaper"></i></h3>
+											</div>
+										</div>
+										<div class="column is-2">
+											<div class="button is-container is-success has-text-centered" data-launch-modal="newBlogPost">
+												<h3 class="title is-4" style="color: white">Blog<br /><br /><i class="fas fa-rss-square"></i></h3>
+											</div>
+										</div>	
+										<div class="column is-2">
+											<div class="button is-container is-info has-text-centered" data-launch-modal="newCalendarItem">
+												<h3 class="title is-4" style="color: white">Calendar<br /><br /><i class="far fa-calendar-alt"></i></h3>
+											</div>
+										</div>
+										<div class="column is-offset-4 is-2 admin-only" style="display: none">
+											<div class="button is-container is-link has-text-centered" data-launch-modal="editWhitelist">
+												<h3 class="title is-4" style="color: white">Whitelist<br /><br /><i class="fas fa-clipboard-list"></i></h3>
+											</div>
+										</div>
+										<div class="column is-2 admin-only" style="display: none">
+											<div class="button is-container is-primary has-text-centered" data-launch-modal="editCarousel">
+												<h3 class="title is-4" style="color: white">Carousel<br /><br /><i class="far fa-images"></i></h3>
+											</div>
+										</div>
+									</div>
+								</h4>
+							</div>
+							
 						</div>
-	                
-	                </div>
-
-					<div class="column is-full">
-					
 						
-						<!-- Newsletter Sign-up -->
-						<div class="has-text-centered">
-							<br /><hr style="background-color: #363636; width: 100%" /><br />
-							<h4 class="title is-4 has-text-centered">
-								Never miss an event by subscribing to our newsletter:<br /><br />
-								<div class="field has-addons is-hidden-mobile" style="width: 55%; margin-left: 22.5%">
-									<div class="control is-expanded">
-										<input class="input is-dark is-large" type="email" placeholder="you@email.com" />
-									</div>
-									<div class="control">
-										<input class="button is-dark is-large" type="button" value="Subscribe!" />
-									</div>
-								</div>
-								<div class="field has-addons is-hidden-tablet" style="width: 100%;">
-									<div class="control is-expanded">
-										<input class="input is-dark is-large" type="email" placeholder="you@email.com" />
-									</div>
-									<div class="control">
-										<button class="button is-dark is-large"><i class="fas fa-arrow-right"></i></button>
-									</div>
-								</div>
-								<p class="is-small underlink" style="text-align: left; font-size: 0.55em; margin-top: -5px"><a href="#privacy">Learn More</a></p>
-							</h4>
-						</div>
-						
-						<!-- PTO Member Sign-in
-						<div class="is-hidden-mobile">
-							<br /><hr style="background-color: #363636; width: 100%" /><br />
-							<h4 class="title is-4 has-text-centered">
-								PTO Board Sign-In:<br /><br />
-								<button class="button is-large is-dark" style="width: calc(100% / 3 * 2)"><i class="fas fa-lock"></i></button>
-							</h4>
-						</div> -->
-					
 					</div>
-	                
-                </div>
-        	</div>
-        </section>
-		
-		<!--Footer -->
-		<footer class="footer">
-			<div class="container">
-				<div class="content has-text-centered">
-					<div class="soc">
-						<a href="https://facebook.com/deerlakepto">&nbsp;&nbsp;<i class="fab fa-facebook fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-						<a href="https://twitter.com/deerlakepto">&nbsp;&nbsp;<i class="fab fa-twitter fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-						<a href="https://instagram.com/deerlakepto">&nbsp;<i class="fab fa-instagram fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-					</div>
-					<br />
-					<p>
-						&copy; Deerlake PTO. Made with ❤ by <a class="underlink is-dark link" href="https://sloanfinger.io/" target="_blank">Sloan Finger</a>.<br />
-					</p>
 				</div>
+			</section>
+			
+			<!-- Footer -->
+			<footer class="footer">
+				<div class="container">
+					<div class="content has-text-centered">
+						<div class="soc">
+							<a href="https://facebook.com/deerlakepto" target="_blank">&nbsp;&nbsp;<i class="fab fa-facebook fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+							<a href="https://twitter.com/deerlakepto" target="_blank">&nbsp;&nbsp;<i class="fab fa-twitter fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+							<a href="https://instagram.com/deerlakepto" target="_blank">&nbsp;<i class="fab fa-instagram fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+							<a href="mailto:questions@deerlakepto.com" target="_blank">&nbsp;<i class="far fa-envelope fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+						</div>
+						<br />
+						<p>&copy; Deerlake PTO. Made with <span id="heart">❤</span> by <a class="underlink is-dark link" href="h" target="_blank">Sloan Finger</a>.<br /></p>
+					</div>
+				</div>
+			</footer>
+			
+			<!-- Modals -->
+			<div id="modals" style="z-index: 999">
+				
+				<!-- Blog 1 -->
+				<div id="blog1" class="modal animated">
+					<div class="modal-background"></div>
+					<div class="modal-content" id="blog1-content"></div>
+					<a href="#"class="modal-close is-large" aria-label="close" data-launch-modal="blog1"></a>
+				</div>
+				
+				<!-- Blog 2 -->
+				<div id="blog2" class="modal animated">
+					<div class="modal-background"></div>
+					<div class="modal-content" id="blog2-content"></div>
+					<a href="#"class="modal-close is-large" aria-label="close" data-launch-modal="blog2"></a>
+				</div>
+				
+				<!-- Blog 3 -->
+				<div id="blog3" class="modal animated">
+					<div class="modal-background"></div>
+					<div class="modal-content" id="blog3-content"></div>
+					<a href="#"class="modal-close is-large" aria-label="close" data-launch-modal="blog3"></a>
+				</div>
+				
+				<!-- Blog 4 -->
+				<div id="blog4" class="modal animated">
+					<div class="modal-background"></div>
+					<div class="modal-content" id="blog4-content"></div>
+					<a href="#"class="modal-close is-large" aria-label="close" data-launch-modal="blog4"></a>
+				</div>
+				
+				<!-- New Blog Post -->
+				<div id="newBlogPost" class="modal animated">
+					<div class="modal-background"></div>
+					<div class="modal-content">
+						<div class="notification is-light">
+							<br /><h2 class="title is-2" style="margin-bottom: 1em;">Another one, huh?</h2><hr style="background-color: #ddd" /><br />
+							<h4 class="title is-4">Story Title:</h4>
+							<input type="text" id="blogTitle" class="input is-dark is-medium" maxlength="60" placeholder="The Latest Amazing Thing by the Deerlake PTO!" /><br /><br /><hr style="background-color: #ddd" /><br />
+							<h4 class="title is-4">Banner Image URL:</h4>
+							<input type="text" id="blogBanner" class="input is-dark is-medium" placeholder="https://i.imgur.com/banner.jpg" /><br /><br /><hr style="background-color: #ddd;" /><br />
+							<h4 class="title is-4">Content:</h4>
+							<div style="background-color: white;"><div id="editor-container" style="height: 300px"></div></div><br /><br /><hr style="background-color: #ddd;" /><br />
+							<h4 class="title is-4">Category:</h4>
+							<div class="select is-dark is-medium" style="width: 45%">
+								<select id="blogCategory" style="width: 100%">
+									<option selected>#deerlake</option>
+									<option>#boosters</option>
+									<option>#events</option>
+									<option>#bucklife</option>
+									<option>#aroundthedeer</option>
+									<option>#pto</option>
+								</select>
+							</div><br /><br /><hr style="background-color: #ddd;" /><br />
+							<h4 class="title is-4">Audience</h4>
+							<div class="select is-dark is-medium" style="width: 45%">
+								<select id="blogAudience" style="width: 100%">
+									<option selected>#everyone</option>
+									<option>#students</option>
+									<option>#teachers</option>
+									<option>#parents</option>
+									<option>#staff</option>
+								</select>
+							</div><br /><br /><hr style="background-color: #ddd;" /><br />
+							<div class="has-text-centered" style="width: 100%"><button id="postBlog" class="button is-dark is-medium">&nbsp;&nbsp;&nbsp;&nbsp;Post it!&nbsp;&nbsp;&nbsp;&nbsp;</button></div><br />
+						</div>
+					</div>
+					<a href="#"class="modal-close is-large" aria-label="close" data-launch-modal="newBlogPost"></a>
+				</div>
+				
+				<!-- New Newsletter -->
+				<div id="newNewsletter" class="modal animated">
+					<div class="modal-background"></div>
+					<div class="modal-content" style="width: 85%">
+						<div class="notification is-light">
+							<br /><h2 class="title is-2" style="margin-bottom: 1em;">Let's get this started!</h2><hr style="background-color: #ddd" /><br />
+							<h4 class="title is-4">Write Your Epic:</h4>
+							<div style="background-color: white;"><div id="editor2-container" style="height: 325px"></div></div><br /><br /><hr style="background-color: #ddd;" /><br />
+							<h4 class="title is-4">Copy Email List:</h4>
+							<input type="text" id="emailList" class="input is-dark is-medium is-disabled" style="cursor: text;" readonly/><br /><br /><hr style="background-color: #ddd;" /><br />
+							<div class="has-text-centered" style="width: 100%"><button id="sendNewsletter" class="button is-dark is-medium">&nbsp;&nbsp;&nbsp;&nbsp;Send it!&nbsp;&nbsp;&nbsp;&nbsp;</button></div><br />
+							<textarea id="emailContents" style="display: none"></textarea>
+							<a id="downloadLink" download="newsletter.eml" style="display: none"><span>Download EML</span></a>
+						</div>
+					</div>
+					<a href="#"class="modal-close is-large" aria-label="close" data-launch-modal="newNewsletter"></a>
+				</div>
+				
+				<!-- New Calendar Item -->
+				<div id="newCalendarItem" class="modal animated">
+					<div class="modal-background"></div>
+					<div class="modal-content">
+						<div class="notification is-light">
+							<br /><h2 class="title is-2" style="margin-bottom: 1em;">Here we go again!</h2><hr style="background-color: #ddd" /><br />
+							<h4 class="title is-4">Month</h4>
+							<div class="select is-dark is-medium" style="width: 45%">
+								<select id="calendarMonth" style="width: 100%">
+									<option val="Jan.">January</option>
+									<option val="Feb.">February</option>
+									<option val="Mar.">March</option>
+									<option val="Apr.">April</option>
+									<option val="May">May</option>
+									<option val="Jun.">June</option>
+									<option val="Jul.">July</option>
+									<option val="Aug.">August</option>
+									<option val="Sep.">September</option>
+									<option val="Oct.">October</option>
+									<option val="Nov.">November</option>
+									<option val="Dec.">December</option>
+								</select>
+							</div><br /><br /><hr style="background-color: #ddd;" /><br />
+							<h4 class="title is-4">Day</h4>
+							<input type="number" id="calendarDay" class="input is-dark is-medium" value="1" min="1" max="31" /><br /><br /><hr style="background-color: #ddd;" /><br />
+							<h4 class="title is-4">Year</h4>
+							<input type="number" id="calendarYear" class="input is-dark is-medium" value="2020" min="2019" /><br /><br /><hr style="background-color: #ddd;" /><br />
+							<h4 class="title is-4">Event Title</h4>
+							<input type="text" id="calendarTitle" class="input is-dark is-medium" placeholder="Another Fundraiser" /><br /><br /><hr style="background-color: #ddd;" /><br />
+							<h4 class="title is-4">Descrition</h4>
+							<div style="background-color: white;"><div id="editor3-container" style="height: 325px"></div></div><br /><br /><hr style="background-color: #ddd;" /><br />
+							<div class="has-text-centered" style="width: 100%"><button id="addCalenderItem" class="button is-dark is-medium">&nbsp;&nbsp;&nbsp;&nbsp;Add event!&nbsp;&nbsp;&nbsp;&nbsp;</button></div><br />
+						</div>
+					</div>
+					<a href="#" class="modal-close is-large" aria-label="close" data-launch-modal="newCalendarItem"></a>
+				</div>
+				
+				<!-- Edit Whitelist -->
+				<div id="editWhitelist" class="modal animated">
+					<div class="modal-background"></div>
+					<div class="modal-content">
+						<div class="notification is-light">
+							<br /><h2 class="title is-2" style="margin-bottom: 1em;">Having fun yet?</h2><hr style="background-color: #ddd" /><br />
+							<h4 class="title is-4">Remove from Whitelist</h4>
+							<table class="table is-bordered is-hoverable" style="cursor: pointer; width: 100%">
+								<tbody id="removeFromWhitelist"></tbody>
+							</table><hr style="background-color: #ddd;" /><br />
+							<h4 class="title is-4">Add to Whitelist</h4>
+							<div class="field has-addons">
+								<p class="control is-expanded"><input id="whitelistEmail" class="input is-fullwidth" type="text" placeholder="New user's email"></p>
+								<p class="control"><a class="button is-static">@gmail.com</a></p>
+							</div><br />
+							<div class="has-text-centered" style="width: 100%"><button id="addToWhitelist" class="button is-dark is-medium">&nbsp;&nbsp;&nbsp;&nbsp;Add user!&nbsp;&nbsp;&nbsp;&nbsp;</button></div><br />
+						</div>
+					</div>
+					<a href="#"class="modal-close is-large" aria-label="close" data-launch-modal="editWhitelist"></a>
+				</div>
+				
+				<!-- Edit Carousel -->
+				<div id="editCarousel" class="modal animated">
+					<div class="modal-background"></div>
+					<div class="modal-content">
+						<div class="notification is-light">
+							<br /><h2 class="title is-2" style="margin-bottom: 1em;">Let the creativity flow...</h2>
+							<div id="editCarouselSlides"></div>
+							<hr style="background-color: #ddd" /><br />
+							<div class="has-text-centered" style="width: 100%"><button id="addCarouselSlide" class="button is-dark is-medium">&nbsp;&nbsp;&nbsp;&nbsp;Add Carousel Slide&nbsp;&nbsp;&nbsp;&nbsp;</button></div><br />
+						</div>
+					</div>
+					<a href="#"class="modal-close is-large" aria-label="close" data-launch-modal="editCarousel"></a>
+				</div>
+				
 			</div>
-		</footer>
+			
+		</div>
+		
+		<!-- Loader -->
+		<div id="loader" class="animated has-text-centered"><button class="button is-light is-loading is-large"></button><button class="button is-light is-large">Loading...</button></div>
 		
 		<!-- Scripts -->
-		<script src="./assets/js/jquery.min.js"></script>
-		<script src="./assets/js/bulma.js"></script>
-		<script src="./assets/js/main.js"></script>
+		<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
 		<script src="https://cdn.jsdelivr.net/npm/bulma-carousel@3.0.0/dist/js/bulma-carousel.min.js"></script>
-		<script>
-			/* global $ */
-			$(document).ready(function(){
-				var carousels = bulmaCarousel.attach();
-			});
-		</script>
-
+		<script src="./assets/js/jquery.min.js"></script>
+		<script src="./assets/js/main.js"></script>
+		<script src="./assets/js/auth.js"></script>
+		
 	</body>
 </html>
